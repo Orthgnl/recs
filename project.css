@@ -21,13 +21,15 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden; /* hide iframe scrollbar */
+  position: relative; /* needed for iframe shift */
   background: #272727; /* matches page background */
 }
 
 /* PDF iframe inside the container */
 .pdf-container iframe {
-  width: 100vw;
-  height: 100vh;
+  width: calc(100% + 20px); /* slightly wider to hide PDF scrollbar */
+  height: 100%;
   border: none;
-  transform: translateX(-12px); /* shift iframe to hide PDF scrollbar */
+  display: block;
+  margin-left: -10px; /* shift left to crop PDF scrollbar */
 }
