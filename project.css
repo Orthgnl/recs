@@ -8,14 +8,15 @@ html {
   background-attachment: fixed;
 }
 
-
 body {
   min-height: 100%;
   background: transparent;
   color: #f0f0f0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
+/* PDF container styling */
 .pdf-container {
   width: 100vw;
   height: 100vh;
@@ -23,7 +24,8 @@ body {
   background: #272727; /* matches page background */
 }
 
-.pdf-container .pdf-embed {
+/* PDF iframe inside the container */
+.pdf-container iframe {
   width: 100vw;
   height: 100vh;
   border: none;
