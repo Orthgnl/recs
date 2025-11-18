@@ -16,9 +16,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+.pdf-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
 
-::-webkit-scrollbar {
-  display: none;
+.pdf-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pdf-container::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
 }
 
