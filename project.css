@@ -33,3 +33,34 @@ body {
   display: block;
   margin-left: -10px; /* shift left to crop PDF scrollbar */
 }
+
+.pdf-container {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  background: #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.pdf-container canvas {
+  margin: 10px 0;
+  width: 90vw;
+  height: auto;
+}
+
+/* Optional: dark-mode scrollbar */
+.pdf-container::-webkit-scrollbar {
+  width: 12px;
+}
+.pdf-container::-webkit-scrollbar-track {
+  background: #272727;
+}
+.pdf-container::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 6px;
+  border: 3px solid #272727;
+}
