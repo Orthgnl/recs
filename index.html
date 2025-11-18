@@ -27,7 +27,7 @@ html, body {
 
 .pdf-container canvas {
   margin: 10px 0;
-  width: 90vw;  /* scale canvas */
+  width: 90vw;  /* scale canvas to container width */
   height: auto;
 }
 
@@ -54,7 +54,7 @@ html, body {
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
   </script>
 
-  <!-- Render PDF -->
+  <!-- Render PDF with automatic width scaling -->
   <script>
     const url = 'gamerec.pdf'; // your PDF file
     const container = document.getElementById('pdf-viewer');
@@ -62,15 +62,19 @@ html, body {
     pdfjsLib.getDocument(url).promise.then(pdf => {
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
         pdf.getPage(pageNum).then(page => {
-          const viewport = page.getViewport({ scale: 1.5 });
+          const viewport = page.getViewport({ scale: 1 }); // base scale
+          const containerWidth = container.clientWidth;
+          const scale = containerWidth / viewport.width;
+          const scaledViewport = page.getViewport({ scale });
+
           const canvas = document.createElement('canvas');
           container.appendChild(canvas);
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
+          canvas.width = scaledViewport.width;
+          canvas.height = scaledViewport.height;
 
           const renderContext = {
             canvasContext: canvas.getContext('2d'),
-            viewport: viewport
+            viewport: scaledViewport
           };
           page.render(renderContext);
         });
