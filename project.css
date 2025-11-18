@@ -16,23 +16,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-
 .pdf-container {
   width: 100vw;
   height: 100vh;
-  overflow: hidden; /* hide iframe scrollbars */
-  position: relative;
+  overflow: hidden; /* hide iframe scrollbar */
+  background: #272727; /* matches page background */
 }
 
-.pdf-container iframe {
+.pdf-container .pdf-embed {
   width: 100vw;
   height: 100vh;
   border: none;
-  margin: 0;
-  transform: translateX(-12px); /* shift left to hide scrollbar */
+  transform: translateX(-12px); /* shift iframe to hide PDF scrollbar */
 }
-
-
-
-
-
