@@ -16,13 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-/* Dark-mode scrollbar for parent page and containers */
-body, .pdf-container, iframe {
-  scrollbar-width: thin;           /* Firefox */
-  scrollbar-color: #555 #272727;   /* thumb color / track color */
-}
 
-/* Chrome, Edge, Safari */
 body::-webkit-scrollbar,
 .pdf-container::-webkit-scrollbar,
 iframe::-webkit-scrollbar {
@@ -42,5 +36,6 @@ iframe::-webkit-scrollbar-thumb {
   border-radius: 6px;
   border: 3px solid #272727;
 }
+
 
 
