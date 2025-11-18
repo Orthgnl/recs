@@ -29,3 +29,15 @@ body::-webkit-scrollbar-thumb {
   background: transparent;
   border: 0;
 }
+
+  /* PDF container and embedded iframe full-screen with no scrollbars */
+.pdf-container, 
+.pdf-container iframe {
+  width: 100vw;        /* full viewport width */
+  height: 100vh;       /* full viewport height */
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;    /* hides scrollbars */
+}
+
